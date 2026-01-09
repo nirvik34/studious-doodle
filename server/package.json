@@ -1,0 +1,14 @@
+{
+  "name": "stroke-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "dev": "node api.js && node src/index.js",
+    "start": "node api.js && node src/index.js"
+  }
+}

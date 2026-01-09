@@ -1,0 +1,16 @@
+{
+  "name": "stroke-detection-monorepo",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "model"
+  ],
+  "scripts": {
+    "dev:client": "node api.js && npm --workspace client run dev",
+    "dev:server": "node api.js && npm --workspace server run dev",
+    "build:client": "npm --workspace client run build",
+    "preview:client": "npm --workspace client run preview",
+    "start:server": "node api.js && npm --workspace server run start"
+  }
+}

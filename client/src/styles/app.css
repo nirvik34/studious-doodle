@@ -1,0 +1,149 @@
+/* App layout + page primitives */
+
+.appShell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.topBar {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.topBarInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--s-3) var(--s-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 700;
+    color: var(--blue-900);
+    text-decoration: none;
+    min-height: unset;
+}
+
+.brandMark {
+    width: 28px;
+    height: 28px;
+}
+
+.main {
+    width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--s-6) var(--s-4);
+}
+
+.pageHeader {
+    display: grid;
+    gap: var(--s-2);
+    margin-bottom: var(--s-4);
+}
+
+.h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.subtle {
+    color: var(--muted);
+    margin: 0;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-1);
+    padding: var(--s-4);
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+}
+
+@media (min-width: 768px) {
+    .grid2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .h1 {
+        font-size: 1.75rem;
+    }
+}
+
+.footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.footerInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--s-4);
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+/* Animations (subtle) */
+@keyframes pulseSoft {
+    0% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeUp {
+    animation: fadeUp 380ms ease both;
+}
+
+.pulse {
+    animation: pulseSoft 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fadeUp,
+    .pulse {
+        animation: none;
+    }
+}

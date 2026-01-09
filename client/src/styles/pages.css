@@ -1,0 +1,181 @@
+/* Page-specific building blocks */
+
+.hero {
+    display: grid;
+    gap: var(--s-6);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
+
+.heroTitle {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    margin: 0;
+}
+
+@media (min-width: 1024px) {
+    .heroTitle {
+        font-size: 2.125rem;
+    }
+}
+
+.heroLead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.0625rem;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin-top: var(--s-3);
+}
+
+.sectionTitle {
+    margin: 0 0 var(--s-2);
+    font-size: 1.125rem;
+}
+
+.inlineNotice {
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: var(--radius-2);
+    padding: var(--s-3);
+    color: var(--muted);
+}
+
+.formGrid {
+    display: grid;
+    gap: var(--s-4);
+}
+
+.formActions {
+    display: flex;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr {
+    height: 1px;
+    background: var(--border);
+    border: 0;
+}
+
+.scanPanel {
+    display: grid;
+    gap: var(--s-3);
+}
+
+.scanFrame {
+    border: 2px solid var(--border);
+    border-radius: var(--radius-2);
+    background: #0b1220;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    overflow: hidden;
+}
+
+.scanVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Selfie camera feels more natural when mirrored */
+    transform: scaleX(-1);
+    opacity: 0.92;
+    z-index: 0;
+}
+
+.scanOverlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+}
+
+.scanStatus {
+    display: grid;
+    gap: var(--s-2);
+}
+
+.statusRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-2);
+    padding: var(--s-2) var(--s-3);
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: var(--radius-2);
+}
+
+.statusKey {
+    font-weight: 800;
+}
+
+.statusVal {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.gauge {
+    display: grid;
+    gap: var(--s-2);
+}
+
+.gaugeBar {
+    height: 14px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.gaugeFill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.sparkWrap {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    background: #fff;
+    padding: var(--s-3);
+}
+
+.hospList {
+    display: grid;
+    gap: var(--s-3);
+}
+
+.hospItem {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    background: #fff;
+    padding: var(--s-3);
+    display: grid;
+    gap: var(--s-2);
+}
+
+.hospMeta {
+    color: var(--muted);
+}
+
+.ctaPulse {
+    animation: pulseSoft 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ctaPulse {
+        animation: none;
+    }
+}
